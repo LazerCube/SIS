@@ -19,13 +19,13 @@ class tblClasses(models.Model):
     class_code = models.CharField("Class Code", max_length=50)
     id_foreign_unit_1 = models.ForeignKey(tblUnits, on_delete=models.CASCADE,
                                         verbose_name="Unit 1", related_name='Unit_1',
-                                        null=True)
+                                        null=True, blank=True)
     id_foreign_unit_2 = models.ForeignKey(tblUnits, on_delete=models.CASCADE,
                                         verbose_name="Unit 2", related_name='Unit_2',
-                                        null=True)
+                                        null=True, blank=True)
     id_foreign_unit_3 = models.ForeignKey(tblUnits, on_delete=models.CASCADE,
                                         verbose_name="Unit 3", related_name='Unit_3',
-                                        null=True)
+                                        null=True, blank=True)
 
     class Meta:
         verbose_name = ("Class")
@@ -39,7 +39,7 @@ class tblStudent(models.Model):
     name_first = models.CharField("First Name", max_length=200)
     name_last = models.CharField("Last Name", max_length=200)
     date_of_birth = models.DateField(blank=True, null=True)
-    gender = models.BooleanField("Is Male")
+    gender = models.NullBooleanField("Is Male", null=True, blank=True)
     id_foreign_classes = models.ForeignKey(tblClasses, on_delete=models.CASCADE, verbose_name="Class")
 
 
