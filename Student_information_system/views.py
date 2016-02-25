@@ -4,16 +4,15 @@ from django.views import generic
 
 from .models import tblStudent
 
-class IndexView(generic.DetailView):
-    model = tblStudent
-    template_name = 'SIS/index.html'
+def index(request):
+    return HttpResponse('Index')
 
-class StudentView(generic.DetailView):
-    model = tblStudent
-    template_name = 'SIS/index.html'
-
-def students(request):
-    return HttpResponse('Student!')
+def students(request, student_id):
+    student = get_object_or_404(tblStudent, pk=student_id)
+    context = {
+        'student': student,
+    }
+    return render(request, 'SIS/index.html', context)
 
 def classes(request):
     return HttpResponse('Classes!')

@@ -1,5 +1,6 @@
 {% extends "SIS/base.html" %}
 
 {% block content %}
-  <h1>:)</h1>
+  <h1>{{ student.name_first }} {{ student.name_last }}</h1>
+  <p>{{ student.id_foreign_classes}}</p>
 {% endblock %}
