@@ -15,7 +15,7 @@ class tblUnits(models.Model):
         return self.name_unit
 
 class tblClasses(models.Model):
-    id_classes = models.AutoField(primary_key=True)
+    id_classes = models.AutoField(primary_key=True, verbose_name="Class ID")
     class_code = models.CharField("Class Code", max_length=50)
     id_foreign_unit_1 = models.ForeignKey(tblUnits, on_delete=models.CASCADE,
                                         verbose_name="Unit 1", related_name='Unit_1',
@@ -35,7 +35,7 @@ class tblClasses(models.Model):
         return self.class_code
 
 class tblStudent(models.Model):
-    id_students = models.AutoField(primary_key=True)
+    id_students = models.AutoField(primary_key=True, verbose_name="Student ID")
     name_first = models.CharField("First Name", max_length=200)
     name_last = models.CharField("Last Name", max_length=200)
     date_of_birth = models.DateField(blank=True, null=True)
