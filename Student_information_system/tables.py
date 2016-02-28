@@ -8,24 +8,24 @@ class StudentTable(tables.Table):
     name_last = tables.LinkColumn('SIS:students', args=[A('pk')])
     date_of_birth = tables.DateColumn()
     gender = tables.BooleanColumn()
-    id_foreign_classes = tables.Column()
+    id_foreign_classes = tables.LinkColumn('SIS:classes', args=[A('id_foreign_classes.pk')])
 
     class Meta:
         template = 'django_tables/tables.html'
         attrs = {'class': 'table'}
 
 class ClassTable(tables.Table):
-    class_code = tables.Column()
-    id_foreign_unit_1 = tables.Column()
-    id_foreign_unit_2 = tables.Column()
-    id_foreign_unit_3 = tables.Column()
+    class_code = tables.LinkColumn('SIS:classes', args=[A('pk')])
+    id_foreign_unit_1 = tables.LinkColumn('SIS:units', args=[A('id_foreign_unit_1.pk')])
+    id_foreign_unit_2 = tables.LinkColumn('SIS:units', args=[A('id_foreign_unit_2.pk')])
+    id_foreign_unit_3 = tables.LinkColumn('SIS:units', args=[A('id_foreign_unit_3.pk')])
 
     class Meta:
         template = 'django_tables/tables.html'
         attrs = {'class': 'table'}
 
 class UnitsTable(tables.Table):
-    name_unit = tables.Column()
+    name_unit = tables.LinkColumn('SIS:units', args=[A('pk')])
     description = tables.Column()
 
     class Meta:

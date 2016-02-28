@@ -8,3 +8,15 @@ a{
 	text-decoration: none;
 	color: inherit;
 }
+
+@media screen and (min-width: 768px){
+	.jumbotron {
+	    padding-top: 100px;
+	    padding-bottom: 100px;
+	}
+}
+
+.background_1{
+	color:#fff;
+	background-image: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/footer_lodyas.png");
+}

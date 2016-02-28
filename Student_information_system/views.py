@@ -7,14 +7,28 @@ from django_tables2   import RequestConfig
 from .tables  import StudentTable, ClassTable, UnitsTable
 
 def index(request):
-    return HttpResponse('Index')
+    return render(request, 'SIS/index.html')
 
 def students(request, student_id):
     student = get_object_or_404(tblStudent, pk=student_id)
     context = {
         'student': student,
     }
-    return render(request, 'SIS/index.html', context)
+    return render(request, 'SIS/studentView.html', context)
+
+def classes(request, class_id):
+    class_id = get_object_or_404(tblClasses, pk=class_id)
+    context = {
+        'class': class_id,
+    }
+    return render(request, 'SIS/classView.html', context)
+
+def units(request, unit_id):
+    units = get_object_or_404(tblUnits, pk=unit_id)
+    context = {
+        'unit': units,
+    }
+    return render(request, 'SIS/unitView.html', context)
 
 def studentsOverview(request):
     title = "Students"
