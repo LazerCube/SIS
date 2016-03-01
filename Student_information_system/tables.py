@@ -8,6 +8,8 @@ class StudentTable(tables.Table):
     name_last = tables.LinkColumn('SIS:students', args=[A('pk')])
     date_of_birth = tables.DateColumn()
     gender = tables.BooleanColumn()
+    travel_time = tables.Column()
+    post_code = tables.Column()
     id_foreign_classes = tables.LinkColumn('SIS:classes', args=[A('id_foreign_classes.pk')])
 
     class Meta:

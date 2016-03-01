@@ -40,6 +40,8 @@ class tblStudent(models.Model):
     name_last = models.CharField("Last Name", max_length=200)
     date_of_birth = models.DateField(blank=True, null=True)
     gender = models.NullBooleanField("Is Male", null=True, blank=True)
+    travel_time = models.DurationField("Travel Time", null=True, blank=True)
+    post_code = models.CharField("Post Code", max_length=7, null=True, blank=True)
     id_foreign_classes = models.ForeignKey(tblClasses, on_delete=models.CASCADE, verbose_name="Class")
 
 
