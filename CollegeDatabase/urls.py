@@ -18,6 +18,9 @@ from django.contrib import admin
 
 from . import views
 
+handler404 = 'CollegeDatabase.views.page_not_found'
+handler500 = 'CollegeDatabase.views.server_error'
+
 urlpatterns = [
     url(r'^$', views.index, name="index"),
     url(r'^SIS/', include('Student_information_system.urls')),
