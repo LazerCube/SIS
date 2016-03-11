@@ -6,7 +6,7 @@ Use `python manage.py runserver` - for local machine testing.
 Use `python manage.py runserver 0.0.0.0:8000` - for local network testing.      
 
 
-Use `python manage.py runserver 0.0.0.0:8000 --secure` to run test server when
+Use `python manage.py runserver 0.0.0.0:8000 --insecure` to run test server when
 `DEBUG = False` or else static files won't load. Custom 404 and 500 pages won't
 show unless `DEBUG = False`.
 
