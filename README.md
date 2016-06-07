@@ -14,6 +14,14 @@ show unless `DEBUG = False`.
 If you want Debug information then `DEBUG = True` needs to be set in settings.py.
 NOTE: This won't show custom 404 and 500 pages.
 
+
+## Admin account
+
+Username: Admin
+Email: Admin@example.com
+Password: adminpassword
+
+
 ### Dependencies
 
 *   Django-tables2

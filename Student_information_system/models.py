@@ -17,13 +17,13 @@ class tblUnits(models.Model):
 class tblClasses(models.Model):
     id_classes = models.AutoField(primary_key=True, verbose_name="Class ID")
     class_code = models.CharField("Class Code", max_length=50)
-    id_foreign_unit_1 = models.ForeignKey(tblUnits, on_delete=models.CASCADE,
+    id_foreign_unit_1 = models.ForeignKey(tblUnits,
                                         verbose_name="Unit 1", related_name='Unit_1',
                                         null=True, blank=True)
-    id_foreign_unit_2 = models.ForeignKey(tblUnits, on_delete=models.CASCADE,
+    id_foreign_unit_2 = models.ForeignKey(tblUnits,
                                         verbose_name="Unit 2", related_name='Unit_2',
                                         null=True, blank=True)
-    id_foreign_unit_3 = models.ForeignKey(tblUnits, on_delete=models.CASCADE,
+    id_foreign_unit_3 = models.ForeignKey(tblUnit,
                                         verbose_name="Unit 3", related_name='Unit_3',
                                         null=True, blank=True)
 
@@ -42,7 +42,7 @@ class tblStudent(models.Model):
     gender = models.NullBooleanField("Is Male", null=True, blank=True)
     travel_time = models.DurationField("Travel Time", null=True, blank=True)
     post_code = models.CharField("Post Code", max_length=7, null=True, blank=True)
-    id_foreign_classes = models.ForeignKey(tblClasses, on_delete=models.CASCADE, verbose_name="Class")
+    id_foreign_classes = models.ForeignKey(tblClasses, verbose_name="Class")
 
 
     class Meta:
