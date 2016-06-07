@@ -24,4 +24,6 @@ Password: adminpassword
 
 ### Dependencies
 
+*   Python
+*   Django
 *   Django-tables2
