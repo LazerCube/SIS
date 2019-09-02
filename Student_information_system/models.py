@@ -23,7 +23,7 @@ class tblClasses(models.Model):
     id_foreign_unit_2 = models.ForeignKey(tblUnits,
                                         verbose_name="Unit 2", related_name='Unit_2',
                                         null=True, blank=True)
-    id_foreign_unit_3 = models.ForeignKey(tblUnit,
+    id_foreign_unit_3 = models.ForeignKey(tblUnits,
                                         verbose_name="Unit 3", related_name='Unit_3',
                                         null=True, blank=True)
 
